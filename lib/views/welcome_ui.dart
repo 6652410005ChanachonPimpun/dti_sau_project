@@ -1,3 +1,5 @@
+import 'package:dti_sau_project/views/login_ui.dart';
+import 'package:dti_sau_project/views/singup_ui.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeUI extends StatefulWidget {
@@ -10,13 +12,13 @@ class WelcomeUI extends StatefulWidget {
 class _WelcomeUIState extends State<WelcomeUI> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.amber,
       body: Center(
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.145,
+              height: MediaQuery.of(context).size.height * 0.125,
             ),
             Image.asset(
               'assets/images/logo.png',
@@ -53,12 +55,18 @@ class _WelcomeUIState extends State<WelcomeUI> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //เปิด loginUi() แบบย้อนกลับได้
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginUI(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "LOGIN",
-                     style: TextStyle(
-                      color: const Color.fromARGB(255, 0, 0, 0)
-                    ),
+                    style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
                   ),
                   style: OutlinedButton.styleFrom(
                     fixedSize: Size(
@@ -74,12 +82,18 @@ class _WelcomeUIState extends State<WelcomeUI> {
                   width: MediaQuery.of(context).size.height * 0.01,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SingupUI(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "SINGUP",
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 255, 255, 255)
-                    ),
+                        color: const Color.fromARGB(255, 255, 255, 255)),
                   ),
                   style: OutlinedButton.styleFrom(
                     backgroundColor: Colors.black,

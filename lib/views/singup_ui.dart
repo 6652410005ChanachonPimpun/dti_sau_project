@@ -10,6 +10,8 @@ class SingupUI extends StatefulWidget {
 class _SingupUIState extends State<SingupUI> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.green,
+    );
   }
 }
